@@ -13,4 +13,8 @@ RUN cd /home/vagrant && aria2c -q "https://download.jetbrains.com/product?code=r
 USER vagrant
 RUN cd /home/vagrant && git clone 'https://github.com/microsoft/restler-fuzzer.git' && mkdir restler-bin && cd restler-fuzzer/ && python ./build-restler.py --dest_dir /home/vagrant/restler-bin/
 
+# Pycharm Professional
+USER vagrant
+RUN cd /home/vagrant && aria2c -q "https://download.jetbrains.com/product?code=PC&latest&distribution=linux" && tar xf *.tar.gz && rm *.tar.gz
+
 USER root
